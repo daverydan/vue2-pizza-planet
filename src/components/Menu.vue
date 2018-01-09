@@ -25,7 +25,37 @@
 				</tbody>
 			</table>
 		</div>
-		{{ basket }}
+		
+		<!-- Shopping Basket -->
+		<div class="col-sm-12 col-md-6">
+			<div v-if="basket.length > 0">
+				<table class="table">
+					<thead class="thead-default">
+						<tr>
+							<th>Qty</th>
+							<th>Item</th>
+							<th>Total</th>
+						</tr>
+					</thead>
+					<tbody v-for="item in basket">
+						<tr>
+							<td>
+								<button class="btn btn-sm" type="button">-</button>
+								<span>{{ item.qty }}-</span>
+								<button class="btn btn-sm" type="button">+</button>
+							</td>
+							<td>{{ item.name }} {{ item.size }}</td>
+							<td>{{ item.price * item.qty }}</td>
+						</tr>
+					</tbody>
+				</table>
+				<p>Order total: </p>
+				<button class="btn btn-success btn-block">Place Order</button>
+			</div>
+			<div v-else>
+				{{ basketText }}
+			</div>
+		</div>
 	</div>
 </template>
 
@@ -34,6 +64,7 @@
 		data () {
 			return {
 				basket: [],
+				basketText: 'Your cart is empty',
 				getMenuItems: {
 					1: {
 					  'name': 'Margherita',
