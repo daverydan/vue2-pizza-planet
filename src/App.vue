@@ -4,7 +4,8 @@
 			<pp-header></pp-header>
 		</div>
 		<div class="container">
-			<pp-home></pp-home>
+			<!-- <pp-home></pp-home> -->
+			<pp-menu></pp-menu>
 		</div>
 		<div class="container">
 			<pp-footer></pp-footer>
@@ -16,12 +17,14 @@
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Home from './components/Home'
+import Menu from './components/Menu'
 
 export default {
 	components: {
 		ppHeader: Header,
 		ppFooter: Footer,
-		ppHome: Home
+		ppHome: Home,
+		ppMenu: Menu
 	}
 }
 </script>
