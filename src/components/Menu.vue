@@ -17,12 +17,15 @@
 						<td>{{ option.size }}</td>
 						<td>{{ option.price }}</td>
 						<td>
-							<button class="btn btn-sm btn-outline-success" type="button">+</button>
+							<button class="btn btn-sm btn-outline-success"
+											type="button"
+											@click="addToBasket(item, option)">+</button>
 						</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
+		{{ basket }}
 	</div>
 </template>
 
@@ -30,7 +33,7 @@
 	export default {
 		data () {
 			return {
-				item: '',
+				basket: [],
 				getMenuItems: {
 					1: {
 					  'name': 'Margherita',
@@ -67,6 +70,17 @@
 					}
 				} // getMenuItems
 			}
-		} // data
+		}, // data
+
+		methods: {
+			addToBasket (item, option) {
+				this.basket.push({
+					name: item.name,
+					price: option.price,
+					size: option.size,
+					qty: 1
+				})
+			} // addToBasket
+		} // methods
 	}
 </script>
