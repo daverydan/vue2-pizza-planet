@@ -66,6 +66,18 @@
 		components: {
 			ppNewPizza: NewPizza,
 			ppLogin: Login
-		} // components
+		}, // components
+
+		data() {
+			return {
+				name: 'Danny'
+			}
+		},
+
+		beforeRouteEnter: (to, from, next) => {
+			next(vm => {
+				alert('Hi ' + vm.name)
+			})
+		}
 	}
 </script>
