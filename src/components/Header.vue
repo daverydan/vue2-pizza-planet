@@ -1,13 +1,13 @@
 <template>
 	<header class="row">
 		<nav class="navbar navbar-expand-md navbar-light">
-			<a href="/" class="navbar-brand">PIZZA PLANET</a>
+			<router-link to="/"><a class="navbar-brand">PIZZA PLANET</a></router-link>
 			<ul class="nabar-nav">
 				<li class="nav-item">
-					<a href="" class="nav-link">home</a>
+					<router-link to="/"><a class="nav-link">home</a></router-link>
 				</li>
 				<li class="nav-item">
-					<a href="" class="nav-link">menu</a>
+					<router-link to="/menu"><a class="nav-link">menu</a></router-link>
 				</li>
 			</ul>
 		</nav>
