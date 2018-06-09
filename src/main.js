@@ -30,6 +30,12 @@ const router = new VueRouter({
 	mode: 'history'
 })
 
+router.beforeEach((to, from, next) => {
+	alert('nav triggered')
+	console.log(to)
+	next()
+})
+
 new Vue({
   el: '#app',
   router,
